@@ -1,0 +1,14 @@
+.row {
+    height: 600px;
+    width:  890px;
+}
+
+.column {
+    box-sizing: border-box;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 35px 0 0;
+    padding: 208px 40px 0 40px;
+    width: 400px;
+    height: 100%;
+}

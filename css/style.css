@@ -1,0 +1,113 @@
+body {
+    background-color: black;
+    margin: 0;
+}
+
+/** Images **/
+.pokedex {
+    position: absolute;
+    height: 600px;
+    width: 400px;
+    z-index: -5;
+}
+
+.joint {
+    position: absolute;
+    z-index: -1;
+    height: 600px;
+    margin-left: 390px;
+}
+
+.closedTab {
+    position: absolute;
+    z-index: 10;
+    display: static;
+}
+
+.openedTab {
+    position: absolute;
+    z-index: -5;
+    margin-left: 440px;
+    display: none;
+}
+
+
+/** Data **/
+
+ul {
+    list-style:none;
+    padding: 0;
+}
+
+.pokemonData {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.thumb {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto 0 auto;
+    height: 110px;
+}
+
+.nome {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 100px;
+}
+
+.altura, .peso{
+    padding: 0 20px 0 20px;
+    margin: 0 0 5px 0;
+    text-align: left;
+    color: white;
+}
+
+.statusArea {
+    padding: 6px;
+}
+
+.baseBar {
+    width: 40px;
+    height: 115px;
+    display: inline-block;
+    margin: 20px 0 0 0px;
+}
+
+.baseBar div {
+    width: 40px;
+    height: 8px;
+    background-color: white;
+    display: block;
+    margin: 0 0 2px 0;
+}
+
+.baseBar h5 {
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+.statLabel {
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.pokeType {
+    text-align: center;
+    background-color: grey;
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgb(0, 0, 0);
+    margin: 8px 0 0 0;
+    color : white;
+    text-shadow: 2px 2px 3px black;
+}
+
+.typeSpace {
+    overflow-y: auto;
+    height: 90px;
+    margin: 20px 0 0 0;
+}

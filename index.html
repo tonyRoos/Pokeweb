@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/info.css">
+    <title>PokeDex</title>
+</head>
+
+<body>
+    <img src="./img/base.png" alt="" class="pokedex" />
+    <img src="./img/joint.png" alt="" class="joint" />
+    <img src="./img/openTab.png" alt="" class="openedTab" id="openedTab" />
+    <img src="./img/closedTab.png" alt="" class="closedTab" id="closedTab" onclick="openTab()" />
+    <div id="dadosPokemon" class="pokemonData">
+        <div class="row">
+            <div class="column">
+                <img src="" alt="" class="thumb" />
+                <h2 class="nome"></h2>
+                <input type="text" class="text" id="input_name" placeholder="Nome ou ID do pokemon"
+                    onfocusout="searchPoke()">
+                <button class="pushable" onclick="prevPoke()">
+                    <span class="front">Anterior</span>
+                </button>
+                <button class="pushable" onclick="rndPoke()">
+                    <span class="front">Estou com Sorte</span>
+                </button>
+                <button class="pushable" onclick="nextPoke()">
+                    <span class="front">Próximo</span>
+                </button>
+            </div>
+            <div class="column" id="openTab" onclick="closeTab()" style="display: none;">
+                <ul class="list">
+                    <li class="altura"></li>
+                    <li class="peso"></li>
+                </ul>
+                <div class="statusArea">
+                    <div class="baseBar">
+                        <div id="hp10"></div>
+                        <div id="hp9"></div>
+                        <div id="hp8"></div>
+                        <div id="hp7"></div>
+                        <div id="hp6"></div>
+                        <div id="hp5"></div>
+                        <div id="hp4"></div>
+                        <div id="hp3"></div>
+                        <div id="hp2"></div>
+                        <div id="hp1"></div>
+                        <h5 class="statLabel">HP</h5>
+                        <h5 class="hp"></h5>
+                    </div>
+
+
+                    <div class="baseBar">
+                        <div id="atk10"></div>
+                        <div id="atk9"></div>
+                        <div id="atk8"></div>
+                        <div id="atk7"></div>
+                        <div id="atk6"></div>
+                        <div id="atk5"></div>
+                        <div id="atk4"></div>
+                        <div id="atk3"></div>
+                        <div id="atk2"></div>
+                        <div id="atk1"></div>
+                        <h5 class="statLabel">ATK</h5>
+                        <h5 class="atk"></h5>
+                    </div>
+
+                    <div class="baseBar">
+                        <div id="def10"></div>
+                        <div id="def9"></div>
+                        <div id="def8"></div>
+                        <div id="def7"></div>
+                        <div id="def6"></div>
+                        <div id="def5"></div>
+                        <div id="def4"></div>
+                        <div id="def3"></div>
+                        <div id="def2"></div>
+                        <div id="def1"></div>
+                        <h5 class="statLabel">DEF</h5>
+                        <h5 class="def"></h5>
+                    </div>
+
+                    <div class="baseBar">
+                        <div id="spAtk10"></div>
+                        <div id="spAtk9"></div>
+                        <div id="spAtk8"></div>
+                        <div id="spAtk7"></div>
+                        <div id="spAtk6"></div>
+                        <div id="spAtk5"></div>
+                        <div id="spAtk4"></div>
+                        <div id="spAtk3"></div>
+                        <div id="spAtk2"></div>
+                        <div id="spAtk1"></div>
+                        <h5 class="statLabel">SpATK</h5>
+                        <h5 class="spAtk"></h5>
+                    </div>
+
+                    <div class="baseBar">
+                        <div id="spDef10"></div>
+                        <div id="spDef9"></div>
+                        <div id="spDef8"></div>
+                        <div id="spDef7"></div>
+                        <div id="spDef6"></div>
+                        <div id="spDef5"></div>
+                        <div id="spDef4"></div>
+                        <div id="spDef3"></div>
+                        <div id="spDef2"></div>
+                        <div id="spDef1"></div>
+                        <h5 class="statLabel">SpDEF</h5>
+                        <h5 class="spDef"></h5>
+                    </div>
+
+                    <div class="baseBar">
+                        <div id="spd10"></div>
+                        <div id="spd9"></div>
+                        <div id="spd8"></div>
+                        <div id="spd7"></div>
+                        <div id="spd6"></div>
+                        <div id="spd5"></div>
+                        <div id="spd4"></div>
+                        <div id="spd3"></div>
+                        <div id="spd2"></div>
+                        <div id="spd1"></div>
+                        <h5 class="statLabel">SPD</h5>
+                        <h5 class="spd"></h5>
+                    </div>
+                </div>
+
+                <div class="typeSpace">
+                    <ul id="typeList"></ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <h2> Pokeweb - Desktop &copy; Julho - 2021 </h2>
+        <h4> A pokeweb é uma pokedex baseada na pokeApi, desenvolvida como um estudo de javascript.</h4>
+        <a href="https://github.com/marcosRoos" target="_blank">Marco Antônio M. Roos</a>
+        <iframe src="./license.html" frameborder="1" class="legal"></iframe>
+    </div>
+
+    <script src="./js/pokeAPI.js"></script>
+    <script src="./js/pokemon.js"></script>
+    <script src="./js/statusBar.js"></script>
+    <script src="./js/pokeType.js"></script>
+    <script src="./js/Render.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
