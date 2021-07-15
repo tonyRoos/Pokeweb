@@ -7,7 +7,7 @@ function typeColor(type) {
             return "goldenrod";
             break;
         case 'fire':
-            return "red";
+            return "orangered";
             break;
         case 'grass':
             return "green";
