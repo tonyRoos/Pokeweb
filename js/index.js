@@ -27,7 +27,7 @@ pokeApi.buscarPokemon(pos)
   function tts(speech) {
     window.speechSynthesis.cancel();
     let msg = new SpeechSynthesisUtterance(speech);
-    //speechSynthesisUtteranceInstance.lang = 'en-US';
+    msg.lang = 'en-US';
     window.speechSynthesis.speak(msg);
   }
 
