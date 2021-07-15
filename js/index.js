@@ -1,7 +1,7 @@
 console.log("Observação : Esta versão imprime informações no console log a fim de comprovar a funcionalidade de salvar a lista de pokemons acessados via 'estou com sorte'");
 console.log(localStorage.getItem('randomId'));
-//alert( speechSynthesisUtteranceInstance.lang );
-speechSynthesisUtteranceInstance.lang = 'en-US';
+alert( speechSynthesisUtteranceInstance.lang );
+
 
 let pokeApi = new PokeApi();
 let render = new Render();
@@ -25,6 +25,14 @@ pokeApi.buscarPokemon(pos)
     render.renderizar(new Pokemon(pokemon));
   });
 
+function say(speech) {
+  window.speechSynthesis.cancel();
+  let msg = new SpeechSynthesisUtterance(speech);
+  speechSynthesisUtteranceInstance.lang = 'en-US';
+  window.speechSynthesis.speak(msg);
+}
+
+
 function generateRandom(size = 893) {
   let rnd = Math.floor(Math.random() * size);
   randomId = randomId.length >= 893 ? [] : randomId;
@@ -43,9 +51,7 @@ function findPoke() {
         pos = pokemon.id;
         document.getElementById("input_name").placeholder = "Nome ou ID do pokemon";
 
-        window.speechSynthesis.cancel();
-        let msg = new SpeechSynthesisUtterance(pokemon.name);
-        window.speechSynthesis.speak(msg);
+        say(pokemon.nome);
 
       }).catch(function (_err) {
         pos = 1;
@@ -94,9 +100,7 @@ function openTab() {
   pos = 1;
   findPoke();
   setTimeout(() => {
-    window.speechSynthesis.cancel();
-    let msg = new SpeechSynthesisUtterance("Pokedex conected and ready!");
-    window.speechSynthesis.speak(msg);
+    say("Pokedex conected and ready!");
   }, 100);
   
 }
@@ -106,7 +110,5 @@ function closeTab() {
   document.getElementById('openedTab').style.display = "none";
   document.getElementById('openTab').style.display = "none";
 
-  window.speechSynthesis.cancel();
-  let msg = new SpeechSynthesisUtterance("turning off!");
-  window.speechSynthesis.speak(msg);
+  say("turning off!");
 }
