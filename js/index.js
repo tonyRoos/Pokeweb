@@ -1,4 +1,4 @@
-console.log( `Language : ${ new SpeechSynthesisUtterance().lang }` );
+console.log( `Language : ${ navigator.language }` );
 console.log( "Observação : Esta versão imprime informações no console log a fim de comprovar a funcionalidade de salvar a lista de pokemons acessados via 'estou com sorte'" );
 console.log( localStorage.getItem( 'randomId' ) );
 
@@ -97,7 +97,7 @@ function openTab() { // eslint-disable-line no-unused-vars
   pos = 1;
   findPoke();
   setTimeout( () => {
-    if ( new SpeechSynthesisUtterance().lang === 'pt-BR' ) {
+    if ( navigator.language === 'pt-BR' ) {
       tts( 'Pokedex conectada e pronta!', 'pr-BR' );
     } else {
       tts( 'Pokedex conected and ready!' );
@@ -109,7 +109,7 @@ function closeTab() { // eslint-disable-line no-unused-vars
   document.getElementById( 'closedTab' ).style.display = 'block';
   document.getElementById( 'openedTab' ).style.display = 'none';
   document.getElementById( 'openTab' ).style.display = 'none';
-  if ( new SpeechSynthesisUtterance().lang === 'pt-BR' ) {
+  if ( navigator.language === 'pt-BR' ) {
     tts( 'Desativando!', 'pt-BR' );
   } else {
     tts( 'turning off!' );
