@@ -22,10 +22,10 @@ pokeApi.buscarPokemon( pos )
     render.renderizar( new Pokemon( pokemon ) );
   } );
 
-function tts( speech ) {
+function tts( speech, lang = 'en-US' ) {
   window.speechSynthesis.cancel();
   const msg = new SpeechSynthesisUtterance( speech );
-  msg.lang = 'en-US';
+  msg.lang = lang;
   window.speechSynthesis.speak( msg );
 }
 
@@ -98,7 +98,7 @@ function openTab() { // eslint-disable-line no-unused-vars
   findPoke();
   setTimeout( () => {
     if ( new SpeechSynthesisUtterance().lang === 'pt-br' ) {
-      tts( 'Pokedex conectada e pronta!' );
+      tts( 'Pokedex conectada e pronta!', 'pr-BR' );
     } else {
       tts( 'Pokedex conected and ready!' );
     }
@@ -110,7 +110,7 @@ function closeTab() { // eslint-disable-line no-unused-vars
   document.getElementById( 'openedTab' ).style.display = 'none';
   document.getElementById( 'openTab' ).style.display = 'none';
   if ( new SpeechSynthesisUtterance().lang === 'pt-br' ) {
-    tts( 'Desativando!' );
+    tts( 'Desativando!', 'pt-BR' );
   } else {
     tts( 'turning off!' );
   }
