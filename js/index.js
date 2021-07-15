@@ -24,13 +24,12 @@ pokeApi.buscarPokemon(pos)
     render.renderizar(new Pokemon(pokemon));
   });
 
-function say(speech) {
-  window.speechSynthesis.cancel();
-  let msg = new SpeechSynthesisUtterance(speech);
-  speechSynthesisUtteranceInstance.lang = 'en-US';
-  window.speechSynthesis.speak(msg);
-}
-
+  function tts(speech) {
+    window.speechSynthesis.cancel();
+    let msg = new SpeechSynthesisUtterance(speech);
+    //speechSynthesisUtteranceInstance.lang = 'en-US';
+    window.speechSynthesis.speak(msg);
+  }
 
 function generateRandom(size = 893) {
   let rnd = Math.floor(Math.random() * size);
@@ -50,7 +49,7 @@ function findPoke() {
         pos = pokemon.id;
         document.getElementById("input_name").placeholder = "Nome ou ID do pokemon";
 
-        say(pokemon.nome);
+        tts(pokemon.name);
 
       }).catch(function (_err) {
         pos = 1;
@@ -99,8 +98,8 @@ function openTab() {
   pos = 1;
   findPoke();
   setTimeout(() => {
-    say("Pokedex conected and ready!");
-  }, 100);
+    tts("Pokedex conected and ready!");
+  }, 50);
   
 }
 
@@ -109,5 +108,5 @@ function closeTab() {
   document.getElementById('openedTab').style.display = "none";
   document.getElementById('openTab').style.display = "none";
 
-  say("turning off!");
+  tts("turning off!");
 }
