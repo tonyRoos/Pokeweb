@@ -1,4 +1,4 @@
-// eslint-disable-line max-len
+console.log( `Language : ${ new SpeechSynthesisUtterance().lang }` );
 console.log( "Observação : Esta versão imprime informações no console log a fim de comprovar a funcionalidade de salvar a lista de pokemons acessados via 'estou com sorte'" );
 console.log( localStorage.getItem( 'randomId' ) );
 
