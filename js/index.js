@@ -21,10 +21,10 @@ pokeApi.buscarPokemon( pos )
     render.renderizar( new Pokemon( pokemon ) );
   } );
 
-function tts( speech, lang = 'en-US' ) {
+function tts( speech ) {
   window.speechSynthesis.cancel();
   const msg = new SpeechSynthesisUtterance( speech );
-  msg.lang = lang;
+  msg.lang = 'en-US';
   window.speechSynthesis.speak( msg );
 }
 
@@ -56,7 +56,7 @@ function findPoke() {
 
 
 function searchPoke() { // eslint-disable-line no-unused-vars
-  if (pos === document.getElementById( 'input_name' ).value ) {
+  if ( pos === document.getElementById( 'input_name' ).value ) {
     return null;
   }
   pos = document.getElementById( 'input_name' ).value;
@@ -96,11 +96,7 @@ function openTab() { // eslint-disable-line no-unused-vars
   pos = 1;
   findPoke();
   setTimeout( () => {
-    if ( navigator.language === 'pt-BR' ) {
-      tts( 'Pokedex conectada e pronta!', 'pr-BR' );
-    } else {
-      tts( 'Pokedex conected and ready!' );
-    }
+    tts( 'Pokedex conected and ready!' );
   }, 50 );
 }
 
@@ -108,9 +104,5 @@ function closeTab() { // eslint-disable-line no-unused-vars
   document.getElementById( 'closedTab' ).style.display = 'block';
   document.getElementById( 'openedTab' ).style.display = 'none';
   document.getElementById( 'openTab' ).style.display = 'none';
-  if ( navigator.language === 'pt-BR' ) {
-    tts( 'Desativando!', 'pt-BR' );
-  } else {
-    tts( 'turning off!' );
-  }
+  tts( 'turning off!' );
 }
