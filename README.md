@@ -14,3 +14,5 @@ To close pokedex, click on it's tab, it will restart.
 The "estou com sorte" button finds a random pokemon, then saves it on a list so it wont show it again.
 this list has persistence, to reset it, you need to clean browser cache memory. ( the random pokemon go from 1 to 893, but you can acess the others
 with search or next button )
+
+<p align="center"> <a href="https://marcosroos.github.io/Pokeweb"> ACESS POKEDEX </a> </p>
