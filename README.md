@@ -1,3 +1,5 @@
+<img src="http://unmaintained.tech/badge.svg"/>
+
 # Pokeweb
 Pokeweb is an free online pokedex.
 <hr>
